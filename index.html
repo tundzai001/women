@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Gift For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-container">
+        <!-- Màn hình chào mừng -->
+        <div id="welcome-screen" class="screen active">
+            <svg class="smiley-icon animatable" id="smiley-wink" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#333" stroke-width="3"/><circle cx="35" cy="45" r="5" fill="#333"/><path d="M 60 45 Q 65 40 70 45" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round" class="wink-eye"/><path d="M 30 65 Q 50 80 70 65" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+            <h1 class="animatable">Hello <strong>MY LOVE!</strong></h1>
+            <p class="animatable">do you want to see your gift?</p>
+            <div class="button-container animatable">
+                <button id="yes-btn">YES PLEASE</button>
+                <button id="no-btn">NO THANKS</button>
+            </div>
+        </div>
+
+        <!-- Màn hình "thử lại" -->
+        <div id="try-again-screen" class="screen">
+             <svg class="smiley-icon animatable" id="smiley-sad" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#333" stroke-width="3"/><path d="M 30 50 Q 35 55 40 50" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M 60 50 Q 65 55 70 50" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M 30 70 Q 50 55 70 70" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+            <h2 class="animatable">I promise you'll like it</h2>
+            <button id="try-again-btn" class="animatable">TRY AGAIN</button>
+        </div>
+
+        <!-- Màn hình chọn quà -->
+        <div id="gift-selection-screen" class="screen">
+            <h2 class="section-title animatable">THESE ARE FOR YOU!</h2>
+            <p class="subtitle animatable">I hope you like it, I love you!</p>
+            <div class="gift-grid">
+                <div class="gift-item animatable" data-target="gallery-screen"><svg viewBox="0 0 24 24"><path fill="#b71c1c" d="M21.58,16.09,17,11.5l-4.25,4.25-3.5-3.5-3.58,3.58a.5.5,0,0,0,.35.85H21.23a.5.5,0,0,0,.35-.76M22,5V19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H20A2,2,0,0,1,22,5Z"/></svg></div>
+                <div class="gift-item animatable" data-target="flowers-screen"><svg viewBox="0 0 24 24"><path fill="#b71c1c" d="M12,2A7,7,0,0,0,5,9C5,14.25,12,22,12,22S19,14.25,19,9A7,7,0,0,0,12,2M12,4.5A4.5,4.5,0,0,1,16.5,9C16.5,12.36,13.28,17.2,12,18.88C10.72,17.2,7.5,12.36,7.5,9A4.5,4.5,0,0,1,12,4.5Z"/></svg></div>
+                <div class="gift-item animatable" data-target="song-screen"><svg viewBox="0 0 24 24"><path fill="#b71c1c" d="M17,10.5V7A1,1,0,0,0,16,6H4A1,1,0,0,0,3,7V17A1,1,0,0,0,4,18H16A1,1,0,0,0,17,17V13.5L21,17.5V6.5L17,10.5Z"/></svg></div>
+                <div class="gift-item animatable" data-target="message-screen"><svg viewBox="0 0 24 24"><path fill="#b71c1c" d="M20,4H4A2,2,0,0,0,2,6V18A2,2,0,0,0,4,20H20A2,2,0,0,0,22,18V6A2,2,0,0,0,20,4M20,8L12,13,4,8V6L12,11,20,6V8Z"/></svg></div>
+            </div>
+        </div>
+        
+        <!-- MÀN HÌNH THƯ VIỆN ẢNH -->
+        <div id="gallery-screen" class="screen">
+            <div class="gallery-main-content animatable">
+                <h3 class="section-title">A Story of Us</h3>
+                <div id="scrapbook-container">
+                    <!-- JavaScript sẽ xây dựng cuốn sách 3D ở đây -->
+                </div>
+            </div>
+            <div class="gallery-controls animatable">
+                 <div id="scrapbook-nav">
+                    <button id="prev-page-btn">‹ Prev</button>
+                    <span id="page-indicator">Cover</span>
+                    <button id="next-page-btn">Next ›</button>
+                </div>
+                <button class="return-btn">RETURN</button>
+            </div>
+        </div>
+
+        <!-- MÀN HÌNH BÀI HÁT -->
+        <div id="song-screen" class="screen">
+            <div class="song-main-content animatable">
+                <p id="song-title-text"></p>
+                <div class="video-container">
+                    <iframe id="youtube-player" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p id="song-artist-text" class="song-artist"></p>
+                <p id="secret-message-text" class="secret-message"></p>
+            </div>
+            <div class="song-controls animatable">
+                <button class="return-btn">RETURN</button>
+            </div>
+        </div>
+        
+        <!-- MÀN HÌNH LÁ THƯ -->
+        <div id="message-screen" class="screen">
+            <div class="message-content animatable">
+                <h4 id="message-title"></h4>
+                <div id="message-body"></div>
+                <div id="message-signature" class="signature"></div>
+            </div>
+            <div class="screen-footer animatable">
+                <h3 class="section-title">Message for my love</h3>
+                <button class="return-btn">RETURN</button>
+            </div>
+        </div>
+
+        <!-- MÀN HÌNH HOA -->
+        <div id="flowers-screen" class="screen">
+            <div class="night"></div>
+            <div class="flowers">
+                <div class="flower flower--1"><div class="flower__leafs flower__leafs--1"><div class="flower__leaf flower__leaf--1"></div><div class="flower__leaf flower__leaf--2"></div><div class="flower__leaf flower__leaf--3"></div><div class="flower__leaf flower__leaf--4"></div><div class="flower__white-circle"></div><div class="flower__light flower__light--1"></div><div class="flower__light flower__light--2"></div><div class="flower__light flower__light--3"></div><div class="flower__light flower__light--4"></div><div class="flower__light flower__light--5"></div><div class="flower__light flower__light--6"></div><div class="flower__light flower__light--7"></div><div class="flower__light flower__light--8"></div></div><div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--4"></div><div class="flower__line__leaf flower__line__leaf--5"></div><div class="flower__line__leaf flower__line__leaf--6"></div></div></div>
+                <div class="flower flower--2"><div class="flower__leafs flower__leafs--2"><div class="flower__leaf flower__leaf--1"></div><div class="flower__leaf flower__leaf--2"></div><div class="flower__leaf flower__leaf--3"></div><div class="flower__leaf flower__leaf--4"></div><div class="flower__white-circle"></div><div class="flower__light flower__light--1"></div><div class="flower__light flower__light--2"></div><div class="flower__light flower__light--3"></div><div class="flower__light flower__light--4"></div><div class="flower__light flower__light--5"></div><div class="flower__light flower__light--6"></div><div class="flower__light flower__light--7"></div><div class="flower__light flower__light--8"></div></div><div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div></div>
+                <div class="flower flower--3"><div class="flower__leafs flower__leafs--3"><div class="flower__leaf flower__leaf--1"></div><div class="flower__leaf flower__leaf--2"></div><div class="flower__leaf flower__leaf--3"></div><div class="flower__leaf flower__leaf--4"></div><div class="flower__white-circle"></div><div class="flower__light flower__light--1"></div><div class="flower__light flower__light--2"></div><div class="flower__light flower__light--3"></div><div class="flower__light flower__light--4"></div><div class="flower__light flower__light--5"></div><div class="flower__light flower__light--6"></div><div class="flower__light flower__light--7"></div><div class="flower__light flower__light--8"></div></div><div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div></div>
+                <div class="grow-ans" style="--d:1.2s"><div class="flower__g-long"><div class="flower__g-long__top"></div><div class="flower__g-long__bottom"></div></div></div>
+                <div class="growing-grass"><div class="flower__grass flower__grass--1"><div class="flower__grass--top"></div><div class="flower__grass--bottom"></div><div class="flower__grass__leaf flower__grass__leaf--1"></div><div class="flower__grass__leaf flower__grass__leaf--2"></div><div class="flower__grass__leaf flower__grass__leaf--3"></div><div class="flower__grass__leaf flower__grass__leaf--4"></div><div class="flower__grass__leaf flower__grass__leaf--5"></div><div class="flower__grass__leaf flower__grass__leaf--6"></div><div class="flower__grass__leaf flower__grass__leaf--7"></div><div class="flower__grass__leaf flower__grass__leaf--8"></div><div class="flower__grass__overlay"></div></div></div>
+                <div class="growing-grass"><div class="flower__grass flower__grass--2"><div class="flower__grass--top"></div><div class="flower__grass--bottom"></div><div class="flower__grass__leaf flower__grass__leaf--1"></div><div class="flower__grass__leaf flower__grass__leaf--2"></div><div class="flower__grass__leaf flower__grass__leaf--3"></div><div class="flower__grass__leaf flower__grass__leaf--4"></div><div class="flower__grass__leaf flower__grass__leaf--5"></div><div class="flower__grass__leaf flower__grass__leaf--6"></div><div class="flower__grass__leaf flower__grass__leaf--7"></div><div class="flower__grass__leaf flower__grass__leaf--8"></div><div class="flower__grass__overlay"></div></div></div>
+                <div class="grow-ans" style="--d:2.4s"><div class="flower__g-right flower__g-right--1"><div class="leaf"></div></div></div>
+                <div class="grow-ans" style="--d:2.8s"><div class="flower__g-right flower__g-right--2"><div class="leaf"></div></div></div>
+                <div class="grow-ans" style="--d:2.8s"><div class="flower__g-front"><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8"><div class="flower__g-front__leaf"></div></div><div class="flower__g-front__line"></div></div></div>
+                <div class="grow-ans" style="--d:3.2s"><div class="flower__g-fr"><div class="leaf"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div><div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div></div></div>
+                <div class="long-g long-g--0"><div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:2.2s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:3.4s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--1"><div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:3.8s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:4s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--2"><div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--3"><div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--4"><div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--5"><div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--6"><div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:4.8s"><div class="leaf leaf--3"></div></div></div>
+                <div class="long-g long-g--7"><div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div><div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--1"></div></div><div class="grow-ans" style="--d:3.5s"><div class="leaf leaf--2"></div></div><div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div></div>
+            </div>
+            <div class="screen-footer animatable">
+                <button class="return-btn">RETURN</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
